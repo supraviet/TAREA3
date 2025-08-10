@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Registrar Mascota";
+}
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Registro de Mascota</h2>
+    <form asp-action="Create" method="post" class="row g-3">
+
+        <div class="col-md-6">
+            <label for="Nombre" class="form-label">Nombre de la Mascota</label>
+            <input type="text" class="form-control" id="Nombre" name="Nombre" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="Especie" class="form-label">Especie</label>
+            <select class="form-select" id="Especie" name="Especie" required>
+                <option value="">Seleccione...</option>
+                <option value="Perro">Perro</option>
+                <option value="Gato">Gato</option>
+                <option value="Ave">Ave</option>
+                <option value="Otro">Otro</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label for="Edad" class="form-label">Edad</label>
+            <input type="number" class="form-control" id="Edad" name="Edad" min="0" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="Dueno" class="form-label">Nombre del Dueño</label>
+            <input type="text" class="form-control" id="Dueno" name="Dueno" required>
+        </div>
+
+        <div class="col-12">
+            <label for="Observaciones" class="form-label">Observaciones</label>
+            <textarea class="form-control" id="Observaciones" name="Observaciones" rows="3"></textarea>
+        </div>
+
+        <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary px-5">Guardar</button>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-secondary px-5">Cancelar</a>
+        </div>
+    </form>
+</div>
