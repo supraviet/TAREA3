@@ -1,0 +1,37 @@
+@model TAREA3.Models.Mascota
+@{
+    ViewData["Title"] = "Registro Exitoso | Happy Paws";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden text-center">
+                <div class="card-header bg-gradient-primary py-4">
+                    <h2 class="text-white fw-bold">
+                        <i class="fas fa-check-circle me-2"></i>¡Registro Exitoso!
+                    </h2>
+                </div>
+                <div class="card-body p-5">
+                    <h4 class="mb-4">Gracias por registrar a tu mascota <span class="text-primary">@Model.Nombre</span> 🐾</h4>
+                    <p class="text-muted">Nos aseguraremos de darle el mejor cuidado posible.</p>
+                    <div class="d-grid mt-4">
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-primary btn-lg rounded-pill shadow-sm">
+                            <i class="fas fa-home me-2"></i>Volver a la página principal
+                        </a>
+                    </div>
+                </div>
+                <div class="card-footer bg-light py-3">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+        }
+    </style>
+}

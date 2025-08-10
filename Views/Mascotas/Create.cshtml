@@ -1,45 +1,150 @@
+@model TAREA3.Models.Mascota
 @{
-    ViewData["Title"] = "Registrar Mascota";
+    ViewData["Title"] = "Registro de Mascotas | Happy Paws";
 }
 
-<div class="container my-5">
-    <h2 class="text-center mb-4">Registro de Mascota</h2>
-    <form asp-action="Create" method="post" class="row g-3">
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                <!-- Encabezado con logo -->
+                <div class="card-header bg-gradient-primary py-4">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <h2 class="text-white mb-0 fw-bold"><i class="fas fa-paw me-2"></i>Registro de Mascotas</h2>
+                    </div>
+                </div>
+                
+                <div class="card-body p-5">
+                    <form asp-action="Create" class="needs-validation" novalidate>
+                        <!-- Nombre -->
+                        <div class="mb-4">
+                            <label asp-for="Nombre" class="form-label fw-bold text-primary">
+                                <i class="fas fa-dog me-2"></i>Nombre de la Mascota
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light">
+                                    <i class="fas fa-tag text-primary"></i>
+                                </span>
+                                <input asp-for="Nombre" class="form-control form-control-lg" placeholder="Ej: Firulais" required />
+                            </div>
+                            <span asp-validation-for="Nombre" class="text-danger small"></span>
+                        </div>
 
-        <div class="col-md-6">
-            <label for="Nombre" class="form-label">Nombre de la Mascota</label>
-            <input type="text" class="form-control" id="Nombre" name="Nombre" required>
-        </div>
+                        <!-- Especie con select mejorado -->
+                        <div class="mb-4">
+                            <label asp-for="Especie" class="form-label fw-bold text-primary">
+                                <i class="fas fa-paw me-2"></i>Especie
+                            </label>
+                            <select asp-for="Especie" class="form-select form-select-lg" required>
+                                <option value="" disabled selected>Seleccione una especie</option>
+                                <option value="Perro">🐕 Perro</option>
+                                <option value="Gato">🐈 Gato</option>
+                                <option value="Ave">🦜 Ave</option>
+                                <option value="Roedor">🐹 Roedor</option>
+                                <option value="Otro">❓ Otro</option>
+                            </select>
+                            <span asp-validation-for="Especie" class="text-danger small"></span>
+                        </div>
 
-        <div class="col-md-6">
-            <label for="Especie" class="form-label">Especie</label>
-            <select class="form-select" id="Especie" name="Especie" required>
-                <option value="">Seleccione...</option>
-                <option value="Perro">Perro</option>
-                <option value="Gato">Gato</option>
-                <option value="Ave">Ave</option>
-                <option value="Otro">Otro</option>
-            </select>
-        </div>
+                        <!-- Edad con rango -->
+                        <div class="mb-4">
+                            <label asp-for="Edad" class="form-label fw-bold text-primary">
+                                <i class="fas fa-birthday-cake me-2"></i>Edad (años)
+                            </label>
+                            <input asp-for="Edad" type="range" class="form-range" min="0" max="30" step="1" 
+                                   oninput="document.getElementById('ageValue').innerText = this.value" />
+                            <div class="d-flex justify-content-between">
+                                <small>0</small>
+                                <span class="badge bg-primary rounded-pill px-3" id="ageValue">15</span>
+                                <small>30</small>
+                            </div>
+                        </div>
 
-        <div class="col-md-6">
-            <label for="Edad" class="form-label">Edad</label>
-            <input type="number" class="form-control" id="Edad" name="Edad" min="0" required>
-        </div>
+                        <!-- Información adicional (acordeón) -->
+                        <div class="accordion mb-4" id="moreInfoAccordion">
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed bg-light text-primary fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMoreInfo">
+                                        <i class="fas fa-plus-circle me-2"></i>Información adicional
+                                    </button>
+                                </h2>
+                                <div id="collapseMoreInfo" class="accordion-collapse collapse" data-bs-parent="#moreInfoAccordion">
+                                    <div class="accordion-body pt-3">
+                                        <div class="mb-3">
+                                            <label asp-for="Raza" class="form-label fw-bold text-muted">Raza</label>
+                                            <input asp-for="Raza" class="form-control" placeholder="Ej: Golden Retriever" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label asp-for="Peso" class="form-label fw-bold text-muted">Peso (kg)</label>
+                                            <input asp-for="Peso" type="number" class="form-control" step="0.1" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-        <div class="col-md-6">
-            <label for="Dueno" class="form-label">Nombre del Dueño</label>
-            <input type="text" class="form-control" id="Dueno" name="Dueno" required>
+                        <!-- Botón de submit con animación -->
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill py-3 fw-bold shadow-sm">
+                                <i class="fas fa-paw me-2"></i>REGISTRAR MASCOTA
+                                <span class="spinner-border spinner-border-sm ms-2 d-none" id="submitSpinner"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Footer con logo -->
+                <div class="card-footer bg-light py-3 text-center">
+                
+                </div>
+            </div>
         </div>
-
-        <div class="col-12">
-            <label for="Observaciones" class="form-label">Observaciones</label>
-            <textarea class="form-control" id="Observaciones" name="Observaciones" rows="3"></textarea>
-        </div>
-
-        <div class="col-12 text-center">
-            <button type="submit" class="btn btn-primary px-5">Guardar</button>
-            <a asp-controller="Home" asp-action="Index" class="btn btn-secondary px-5">Cancelar</a>
-        </div>
-    </form>
+    </div>
 </div>
+
+@section Styles {
+    <style>
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+        }
+        .form-control, .form-select {
+            border-radius: 0.5rem;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #4b6cb7;
+            box-shadow: 0 0 0 0.25rem rgba(75, 108, 183, 0.25);
+        }
+        .accordion-button:not(.collapsed) {
+            color: #4b6cb7;
+            background-color: rgba(75, 108, 183, 0.1);
+        }
+    </style>
+}
+
+@section Scripts {
+    <script>
+        // Validación en tiempo real
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    } else {
+                        document.getElementById('submitSpinner').classList.remove('d-none')
+                    }
+                    
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+        
+        // Mostrar valor del rango de edad
+        document.querySelector('input[type="range"]').dispatchEvent(new Event('input'))
+    </script>
+}
