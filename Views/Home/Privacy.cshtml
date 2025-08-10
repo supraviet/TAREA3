@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Políticas de Privacidad";
+}
+<div class="container py-5">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Nuestro Compromiso</h3>
+                    <p class="card-text">
+                        En Veterinaria HappyPaws, nos comprometemos a proteger la privacidad de la información personal 
+                        de nuestros clientes y sus mascotas. Toda la información médica y personal es tratada con 
+                        confidencialidad y solo se utiliza para brindar el mejor servicio veterinario posible.
+                    </p>
+                    
+                    <h4 class="mt-4">Datos que Recopilamos</h4>
+                    <ul>
+                        <li>Información de contacto del dueño</li>
+                        <li>Datos médicos de la mascota</li>
+                        <li>Historial de visitas y tratamientos</li>
+                        <li>Información de facturación (para servicios pagos)</li>
+                    </ul>
+                    
+                    <h4 class="mt-4">Uso de la Información</h4>
+                    <p>
+                        La información recopilada se utiliza exclusivamente para:
+                    </p>
+                    <ul>
+                        <li>Brindar atención médica veterinaria</li>
+                        <li>Contactar en caso de emergencias</li>
+                        <li>Recordatorios de vacunas y controles</li>
+                        <li>Mejorar nuestros servicios</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Contacto</h3>
+                    <p><i class="fas fa-phone me-2"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope me-2"></i> privacidad@happy-paws.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Av. Veterinaria 123, Ciudad</p>
+                    <hr>
+                    <p class="small text-muted">Última actualización: @DateTime.Now.ToString("MMMM dd, yyyy")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

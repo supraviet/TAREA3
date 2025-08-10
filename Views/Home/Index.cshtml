@@ -1,0 +1,123 @@
+﻿@{
+    ViewData["Title"] = "Veterinaria HappyPaws";
+}
+
+<div class="container-fluid px-0">
+    
+    <div class="hero-banner bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Bienvenido a HappyPaws</h1>
+            <p class="lead">Sistema de gestión integral para tu clínica veterinaria</p>
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Logo Veterinaria" width="120" class="my-3">
+        </div>
+    </div>
+
+    
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Nuestros Módulos</h2>
+        <div class="row g-4">
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-primary">
+                    <div class="card-body text-center">
+                        <div class="icon-circle bg-primary text-white mb-3 mx-auto">
+                            <i class="fas fa-paw fa-2x"></i>
+                        </div>
+                        <h3 class="card-title">Registro de Mascotas</h3>
+                        <p class="card-text">Gestione el historial médico de todas las mascotas atendidas en su clínica.</p>
+                        <ul class="text-start text-muted">
+                            <li>Fichas médicas completas</li>
+                            <li>Registro de vacunas</li>
+                            <li>Historial de consultas</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <a href="#" class="btn btn-outline-primary w-100 disabled">Próximamente</a>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-success">
+                    <div class="card-body text-center">
+                        <div class="icon-circle bg-success text-white mb-3 mx-auto">
+                            <i class="fas fa-bone fa-2x"></i>
+                        </div>
+                        <h3 class="card-title">Productos</h3>
+                        <p class="card-text">Administre el inventario de productos y medicamentos de su veterinaria.</p>
+                        <ul class="text-start text-muted">
+                            <li>Control de stock</li>
+                            <li>Gestión de proveedores</li>
+                            <li>Reportes de ventas</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <a href="#" class="btn btn-outline-success w-100 disabled">Próximamente</a>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-info">
+                    <div class="card-body text-center">
+                        <div class="icon-circle bg-info text-white mb-3 mx-auto">
+                            <i class="fas fa-calendar-check fa-2x"></i>
+                        </div>
+                        <h3 class="card-title">Citas Médicas</h3>
+                        <p class="card-text">Organice y gestione las citas de sus clientes de manera eficiente.</p>
+                        <ul class="text-start text-muted">
+                            <li>Agendamiento online</li>
+                            <li>Recordatorios automáticos</li>
+                            <li>Calendario integrado</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <a href="#" class="btn btn-outline-info w-100 disabled">Próximamente</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="bg-light py-4">
+        <div class="container text-center">
+            <h3 class="mb-3">¿Listo para comenzar?</h3>
+            <p class="lead mb-4">Seleccione uno de nuestros módulos para gestionar su clínica</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="btn btn-primary btn-lg disabled">Registro de Mascotas</a>
+                <a href="#" class="btn btn-success btn-lg disabled">Productos</a>
+                <a href="#" class="btn btn-info btn-lg disabled">Citas</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .hero-banner {
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+            margin-bottom: 2rem;
+        }
+        
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+}
